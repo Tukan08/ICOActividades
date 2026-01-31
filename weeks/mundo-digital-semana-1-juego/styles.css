@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 0.8s ease;
+}
+
+.instructions {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.components-area {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.components-area h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.components-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    min-height: 200px;
+}
+
+.component-item {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    cursor: grab;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 3px solid transparent;
+}
+
+.component-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-color: #667eea;
+}
+
+.component-item.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+    transform: rotate(5deg);
+}
+
+.component-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.component-item p {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.table-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+    backdrop-filter: blur(10px);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+thead th {
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+thead th:first-child {
+    border-top-left-radius: 15px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 15px;
+}
+
+tbody tr {
+    background: white;
+    transition: all 0.5s ease;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+}
+
+tbody tr:hover {
+    background: #f8f9ff;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+tbody td {
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.component-cell {
+    min-height: 100px;
+    border: 3px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.component-cell.drag-over {
+    border-color: #667eea;
+    background: #e8ebff;
+    transform: scale(1.02);
+}
+
+.component-cell.filled {
+    border-style: solid;
+    border-color: #667eea;
+    background: white;
+}
+
+.component-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.component-placeholder img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.component-placeholder p {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.85rem;
+}
+
+/* Animaciones para filas correctas/incorrectas */
+@keyframes flashGreen {
+
+    0%,
+    100% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: #4ade80;
+    }
+}
+
+@keyframes flashRed {
+
+    0%,
+    100% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: #f87171;
+    }
+}
+
+tbody tr.correct {
+    animation: flashGreen 0.8s ease;
+    background-color: #d1fae5 !important;
+}
+
+tbody tr.incorrect {
+    animation: flashRed 0.8s ease;
+}
+
+.completion-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.completion-message.show {
+    display: flex;
+}
+
+.completion-message::before {
+    content: '🎉 ¡Felicidades! 🎉\A¡Has completado todas las filas correctamente!';
+    white-space: pre-line;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 80px;
+    border-radius: 30px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    animation: zoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    line-height: 1.4;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) rotate(-180deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    70% {
+        transform: scale(0.95) rotate(-2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .instructions {
+        font-size: 1rem;
+    }
+
+    .components-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .component-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    thead th,
+    tbody td {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+
+    .completion-message::before {
+        font-size: 2rem;
+        padding: 40px 30px;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conociendo los Componentes de mi PC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🖥️ Conociendo los Componentes de mi PC</h1>
+        <p class="instructions">Arrastra cada componente a su tipo correcto (Entrada, Salida o Software)</p>
+
+        <!-- Área de componentes disponibles -->
+        <div class="components-area">
+            <h2>Componentes</h2>
+            <div id="componentsContainer" class="components-container">
+                <!-- Los componentes se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+
+        <!-- Tabla interactiva -->
+        <div class="table-container">
+            <table id="componentsTable">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Tipo</th>
+                        <th>Descripción Breve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas se generarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="completion-message" id="completionMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
