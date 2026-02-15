@@ -1,109 +1,307 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICO Kids - Portal Educativo</title>
-    <meta name="description" content="Portal educativo del Instituto de Compuingles de Oriente para actividades de niños">
-    <link rel="stylesheet" href="styles.css">
+    <title>ICO - Instituto de Compuingles de Oriente</title>
+    <meta name="description" content="Portal educativo del Instituto de Compuingles de Oriente">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo-circle {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 3.5rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 50px;
+            font-weight: 500;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .portals-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .portal-card {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .portal-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .portal-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .portal-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .portal-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .portal-icon {
+            font-size: 6rem;
+            transition: transform 0.4s ease;
+        }
+
+        .portal-card:hover .portal-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .portal-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .portal-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .kids-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+        }
+
+        .mos-card {
+            background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%);
+        }
+
+        footer {
+            margin-top: 60px;
+            color: white;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .welcome-text {
+                font-size: 1.2rem;
+            }
+
+            .portal-card {
+                padding: 40px 30px;
+            }
+
+            .portal-icon {
+                font-size: 4.5rem;
+            }
+
+            .portal-title {
+                font-size: 1.8rem;
+            }
+
+            .portal-description {
+                font-size: 1rem;
+            }
+
+            .portals-container {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .portal-card {
+                padding: 35px 25px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <header class="main-header">
+        <header class="header">
             <div class="logo-section">
                 <div class="logo-circle">ICO</div>
-                <div class="header-text">
-                    <h1>ICO Kids</h1>
-                    <p>Instituto de Compuingles de Oriente</p>
-                </div>
             </div>
+            <h1>Instituto de Compuingles de Oriente</h1>
+            <p class="subtitle">Portal Educativo</p>
         </header>
 
-        <section class="welcome-section">
-            <h2>¡Bienvenido al Portal Educativo!</h2>
-            <p>Selecciona tu materia para comenzar</p>
-        </section>
+        <p class="welcome-text">Selecciona tu portal de aprendizaje</p>
 
-        <main class="subjects-grid">
-            <a href="subjects/mundo-digital.html" class="subject-card card-1" data-subject="mundo-digital">
-                <span class="card-icon">🌐</span>
-                <h3>Mi Nuevo Mundo Digital</h3>
+        <div class="portals-container">
+            <a href="kids-portal.html" class="portal-card kids-card">
+                <span class="portal-icon">🎨</span>
+                <h2 class="portal-title">KIDS</h2>
+                <p class="portal-description">Portal educativo para niños con actividades interactivas y divertidas</p>
             </a>
 
-            <a href="subjects/navega-aprende.html" class="subject-card card-2" data-subject="navega-aprende">
-                <span class="card-icon">🧭</span>
-                <h3>Navega, Aprende y Comparte</h3>
+            <a href="mos-portal.html" class="portal-card mos-card">
+                <span class="portal-icon">💼</span>
+                <h2 class="portal-title">MOS</h2>
+                <p class="portal-description">Microsoft Office Specialist - Cursos profesionales y certificaciones</p>
             </a>
+        </div>
 
-            <a href="subjects/libreta-inteligente.html" class="subject-card card-3" data-subject="libreta-inteligente">
-                <span class="card-icon">📓</span>
-                <h3>Mi Libreta Inteligente</h3>
-            </a>
-
-            <a href="subjects/cuenta-juega.html" class="subject-card card-4" data-subject="cuenta-juega">
-                <span class="card-icon">🔢</span>
-                <h3>Cuenta, Juega y Aprende</h3>
-            </a>
-
-            <a href="subjects/presentaciones.html" class="subject-card card-5" data-subject="presentaciones">
-                <span class="card-icon">🎨</span>
-                <h3>Desarrollando Presentaciones Asombrosas</h3>
-            </a>
-
-            <a href="subjects/reparando-pc.html" class="subject-card card-6" data-subject="reparando-pc">
-                <span class="card-icon">🔧</span>
-                <h3>Explorando y Reparando mi PC</h3>
-            </a>
-
-            <a href="subjects/diseno-digital.html" class="subject-card card-7" data-subject="diseno-digital">
-                <span class="card-icon">🎭</span>
-                <h3>Creatividad y Diseño Digital</h3>
-            </a>
-
-            <a href="subjects/imagenes-fotos.html" class="subject-card card-8" data-subject="imagenes-fotos">
-                <span class="card-icon">📸</span>
-                <h3>Laboratorio de Imágenes y Fotografías</h3>
-            </a>
-
-            <a href="subjects/produccion-musical.html" class="subject-card card-9" data-subject="produccion-musical">
-                <span class="card-icon">🎵</span>
-                <h3>Producción Musical y Videokids</h3>
-            </a>
-
-            <a href="subjects/animacion.html" class="subject-card card-10" data-subject="animacion">
-                <span class="card-icon">🎬</span>
-                <h3>Animación Multimedia</h3>
-            </a>
-
-            <a href="subjects/objetos-3d.html" class="subject-card card-11" data-subject="objetos-3d">
-                <span class="card-icon">🧊</span>
-                <h3>Composición de Objetos 3D</h3>
-            </a>
-
-            <a href="subjects/juegos-interactivos.html" class="subject-card card-12" data-subject="juegos-interactivos">
-                <span class="card-icon">🎮</span>
-                <h3>Construcción de Juegos Interactivos</h3>
-            </a>
-
-            <a href="subjects/robotica.html" class="subject-card card-13" data-subject="robotica">
-                <span class="card-icon">🤖</span>
-                <h3>Robótica Kids en Movimiento</h3>
-            </a>
-
-            <a href="subjects/emprendedores.html" class="subject-card card-14" data-subject="emprendedores">
-                <span class="card-icon">💡</span>
-                <h3>Taller de Emprendedores KIDS</h3>
-            </a>
-        </main>
-
-        <footer class="main-footer">
-            <p>&copy; 2026 Instituto de Compuingles de Oriente - ICO Kids</p>
+        <footer>
+            <p>&copy; 2026 Instituto de Compuingles de Oriente - ICO</p>
         </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
