@@ -11,19 +11,313 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <style>
+        /* Kids-specific colorful styling */
+        :root {
+            --kids-primary: #e85d04;
+            --kids-secondary: #dc2f02;
+            --kids-accent: #f48c06;
+            --kids-dark: #1e293b;
+            --kids-light: #fff7ed;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1400px;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, var(--kids-primary), var(--kids-secondary));
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(232, 93, 4, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--kids-primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-text h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 0 5px 0;
+            font-weight: 700;
+        }
+
+        .header-text p {
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .back-button {
+            background: white;
+            color: var(--kids-primary);
+            padding: 12px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: var(--kids-light);
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .welcome-section h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2rem;
+            color: var(--kids-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .welcome-section p {
+            color: #64748b;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--kids-primary), var(--kids-accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .subject-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(232, 93, 4, 0.2);
+            border-color: var(--kids-accent);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .subject-card:hover .card-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .subject-card h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.3rem;
+            color: var(--kids-dark);
+            text-align: center;
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Colorful card scheme for Kids */
+        .card-1 {
+            --card-color: #f97316;
+        }
+
+        .card-2 {
+            --card-color: #06b6d4;
+        }
+
+        .card-3 {
+            --card-color: #8b5cf6;
+        }
+
+        .card-4 {
+            --card-color: #10b981;
+        }
+
+        .card-5 {
+            --card-color: #ec4899;
+        }
+
+        .card-6 {
+            --card-color: #ef4444;
+        }
+
+        .card-7 {
+            --card-color: #6366f1;
+        }
+
+        .card-8 {
+            --card-color: #14b8a6;
+        }
+
+        .card-9 {
+            --card-color: #f59e0b;
+        }
+
+        .card-10 {
+            --card-color: #e11d48;
+        }
+
+        .card-11 {
+            --card-color: #3b82f6;
+        }
+
+        .card-12 {
+            --card-color: #a855f7;
+        }
+
+        .card-13 {
+            --card-color: #0ea5e9;
+        }
+
+        .card-14 {
+            --card-color: #22c55e;
+        }
+
+        .subject-card:hover {
+            background: linear-gradient(135deg, white 0%, color-mix(in srgb, var(--card-color) 5%, white) 100%);
+        }
+
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.95rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .subjects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .welcome-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 18px;
+            }
+
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <header class="main-header">
-            <div class="logo-section">
-                <div class="logo-circle">ICO</div>
-                <div class="header-text">
-                    <h1>ICO Kids</h1>
-                    <p>Instituto de Compuingles de Oriente</p>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-circle">KIDS</div>
+                    <div class="header-text">
+                        <h1>ICO Kids</h1>
+                        <p>Instituto de Compuingles de Oriente</p>
+                    </div>
                 </div>
+                <a href="index.html" class="back-button">
+                    <span>←</span>
+                    <span>Volver al Inicio</span>
+                </a>
             </div>
         </header>
 
@@ -33,87 +327,81 @@
         </section>
 
         <main class="subjects-grid">
-            <a href="subjects/mundo-digital.html" class="subject-card card-1" data-subject="mundo-digital">
+            <a href="subjects/mundo-digital.html" class="subject-card card-1">
                 <span class="card-icon">🌐</span>
                 <h3>Mi Nuevo Mundo Digital</h3>
             </a>
 
-            <a href="subjects/navega-aprende.html" class="subject-card card-2" data-subject="navega-aprende">
+            <a href="subjects/navega-aprende.html" class="subject-card card-2">
                 <span class="card-icon">🧭</span>
                 <h3>Navega, Aprende y Comparte</h3>
             </a>
 
-            <a href="subjects/libreta-inteligente.html" class="subject-card card-3" data-subject="libreta-inteligente">
+            <a href="subjects/libreta-inteligente.html" class="subject-card card-3">
                 <span class="card-icon">📓</span>
                 <h3>Mi Libreta Inteligente</h3>
             </a>
 
-            <a href="subjects/cuenta-juega.html" class="subject-card card-4" data-subject="cuenta-juega">
+            <a href="subjects/cuenta-juega.html" class="subject-card card-4">
                 <span class="card-icon">🔢</span>
                 <h3>Cuenta, Juega y Aprende</h3>
             </a>
 
-            <a href="subjects/presentaciones.html" class="subject-card card-5" data-subject="presentaciones">
+            <a href="subjects/presentaciones.html" class="subject-card card-5">
                 <span class="card-icon">🎨</span>
                 <h3>Desarrollando Presentaciones Asombrosas</h3>
             </a>
 
-            <a href="subjects/reparando-pc.html" class="subject-card card-6" data-subject="reparando-pc">
+            <a href="subjects/reparando-pc.html" class="subject-card card-6">
                 <span class="card-icon">🔧</span>
                 <h3>Explorando y Reparando mi PC</h3>
             </a>
 
-            <a href="subjects/diseno-digital.html" class="subject-card card-7" data-subject="diseno-digital">
+            <a href="subjects/diseno-digital.html" class="subject-card card-7">
                 <span class="card-icon">🎭</span>
                 <h3>Creatividad y Diseño Digital</h3>
             </a>
 
-            <a href="subjects/imagenes-fotos.html" class="subject-card card-8" data-subject="imagenes-fotos">
+            <a href="subjects/imagenes-fotos.html" class="subject-card card-8">
                 <span class="card-icon">📸</span>
                 <h3>Laboratorio de Imágenes y Fotografías</h3>
             </a>
 
-            <a href="subjects/produccion-musical.html" class="subject-card card-9" data-subject="produccion-musical">
+            <a href="subjects/produccion-musical.html" class="subject-card card-9">
                 <span class="card-icon">🎵</span>
                 <h3>Producción Musical y Videokids</h3>
             </a>
 
-            <a href="subjects/animacion.html" class="subject-card card-10" data-subject="animacion">
+            <a href="subjects/animacion.html" class="subject-card card-10">
                 <span class="card-icon">🎬</span>
                 <h3>Animación Multimedia</h3>
             </a>
 
-            <a href="subjects/objetos-3d.html" class="subject-card card-11" data-subject="objetos-3d">
+            <a href="subjects/objetos-3d.html" class="subject-card card-11">
                 <span class="card-icon">🧊</span>
                 <h3>Composición de Objetos 3D</h3>
             </a>
 
-            <a href="subjects/juegos-interactivos.html" class="subject-card card-12" data-subject="juegos-interactivos">
+            <a href="subjects/juegos-interactivos.html" class="subject-card card-12">
                 <span class="card-icon">🎮</span>
                 <h3>Construcción de Juegos Interactivos</h3>
             </a>
 
-            <a href="subjects/robotica.html" class="subject-card card-13" data-subject="robotica">
+            <a href="subjects/robotica.html" class="subject-card card-13">
                 <span class="card-icon">🤖</span>
                 <h3>Robótica Kids en Movimiento</h3>
             </a>
 
-            <a href="subjects/emprendedores.html" class="subject-card card-14" data-subject="emprendedores">
+            <a href="subjects/emprendedores.html" class="subject-card card-14">
                 <span class="card-icon">💡</span>
                 <h3>Taller de Emprendedores KIDS</h3>
             </a>
         </main>
 
-        <div class="nav-buttons" style="text-align: center; margin: 30px 0;">
-            <a href="index.html" class="btn btn-primary">← Volver al Inicio</a>
-        </div>
-
         <footer class="main-footer">
             <p>&copy; 2026 Instituto de Compuingles de Oriente - ICO Kids</p>
         </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
