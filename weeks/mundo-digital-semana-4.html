@@ -20,22 +20,63 @@
         </header>
 
         <main class="week-content">
-            <h2>Semana 4: Actividad Interactiva</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">
-                ¡Practica lo aprendido sobre el mundo digital con esta actividad interactiva!
-            </p>
+            <h2>Semana 4: Mi Nuevo Mundo Digital</h2>
 
-            <div
-                style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); padding: 1rem;">
+            <div class="week-tabs">
+                <button class="week-tab" data-tab="juego">🎮 Juego</button>
+                <button class="week-tab active" data-tab="actividades">📋 Actividades</button>
+            </div>
+
+            <!-- Juego Tab Content -->
+            <div class="tab-content" id="tab-juego">
+            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                ¡Practica tus conocimientos con esta actividad interactiva!
+            </p>
+            <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); padding: 1rem;">
                 <iframe style="max-width:100%"
                     src="https://wordwall.net/es/embed/6bf19e82d1c94c94bdfb79cc96da0d65?themeId=65&templateId=5&fontStackId=0"
                     width="500" height="380" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+
+            <!-- Actividades Tab Content -->
+            <div class="tab-content active" id="tab-actividades">
+                <div class="sessions-grid" id="sessions-list">
+            <button class="session-btn" data-session="sesion-16">
+                <span class="session-icon">📄</span>
+                Sesión 16
+            </button>
+            <button class="session-btn" data-session="sesion-18">
+                <span class="session-icon">📄</span>
+                Sesión 18
+            </button>
+                </div>
+            <div class="session-content" id="sesion-16">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 16</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
+            <div class="session-content" id="sesion-18">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 18</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
             </div>
         </main>
 
         <div class="nav-buttons">
             <a href="../subjects/mundo-digital.html" class="btn btn-secondary">← Volver a la Materia</a>
-            <a href="../index.html" class="btn btn-primary">🏠 Inicio</a>
+            <a href="../kids-portal.html" class="btn btn-primary">🏠 Portal Kids</a>
         </div>
 
         <footer class="main-footer">

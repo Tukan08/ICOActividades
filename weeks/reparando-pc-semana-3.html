@@ -20,22 +20,63 @@
         </header>
 
         <main class="week-content">
-            <h2>Semana 3: Actividad Interactiva</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">
-                ¡Practica lo aprendido sobre computadoras con esta actividad interactiva!
-            </p>
+            <h2>Semana 3: Explorando y Reparando mi PC</h2>
 
-            <div
-                style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); padding: 1rem;">
+            <div class="week-tabs">
+                <button class="week-tab" data-tab="juego">🎮 Juego</button>
+                <button class="week-tab active" data-tab="actividades">📋 Actividades</button>
+            </div>
+
+            <!-- Juego Tab Content -->
+            <div class="tab-content" id="tab-juego">
+            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                ¡Practica tus conocimientos con esta actividad interactiva!
+            </p>
+            <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); padding: 1rem;">
                 <iframe style="max-width:100%"
                     src="https://wordwall.net/es/embed/081876511de24bc9839f4d376566d40d?themeId=65&templateId=5&fontStackId=0"
                     width="500" height="380" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+
+            <!-- Actividades Tab Content -->
+            <div class="tab-content active" id="tab-actividades">
+                <div class="sessions-grid" id="sessions-list">
+            <button class="session-btn" data-session="sesion-12">
+                <span class="session-icon">📄</span>
+                Sesión 12
+            </button>
+            <button class="session-btn" data-session="sesion-14">
+                <span class="session-icon">📄</span>
+                Sesión 14
+            </button>
+                </div>
+            <div class="session-content" id="sesion-12">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 12</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
+            <div class="session-content" id="sesion-14">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 14</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
             </div>
         </main>
 
         <div class="nav-buttons">
             <a href="../subjects/reparando-pc.html" class="btn btn-secondary">← Volver a la Materia</a>
-            <a href="../index.html" class="btn btn-primary">🏠 Inicio</a>
+            <a href="../kids-portal.html" class="btn btn-primary">🏠 Portal Kids</a>
         </div>
 
         <footer class="main-footer">

@@ -7,7 +7,52 @@
 document.addEventListener('DOMContentLoaded', function () {
     initializeAnimations();
     initializeNavigation();
+    initializeWeekTabs();
 });
+
+/**
+ * Initialize week tab system (Juego / Actividades)
+ */
+function initializeWeekTabs() {
+    // Tab switching
+    const tabs = document.querySelectorAll('.week-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const targetTab = this.getAttribute('data-tab');
+            // Remove active from all tabs and contents
+            document.querySelectorAll('.week-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            // Activate clicked tab and its content
+            this.classList.add('active');
+            const targetContent = document.getElementById('tab-' + targetTab);
+            if (targetContent) targetContent.classList.add('active');
+        });
+    });
+
+    // Session buttons
+    const sessionBtns = document.querySelectorAll('.session-btn');
+    sessionBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const sessionId = this.getAttribute('data-session');
+            // Hide sessions list, show session content
+            const sessionsList = document.getElementById('sessions-list');
+            if (sessionsList) sessionsList.style.display = 'none';
+            const sessionContent = document.getElementById(sessionId);
+            if (sessionContent) sessionContent.classList.add('active');
+        });
+    });
+
+    // Back to sessions buttons
+    const backBtns = document.querySelectorAll('.back-to-sessions');
+    backBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            // Hide all session contents, show sessions list
+            document.querySelectorAll('.session-content').forEach(sc => sc.classList.remove('active'));
+            const sessionsList = document.getElementById('sessions-list');
+            if (sessionsList) sessionsList.style.display = '';
+        });
+    });
+}
 
 /**
  * Initialize card animations

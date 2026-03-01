@@ -20,17 +20,58 @@
         </header>
 
         <main class="week-content">
-            <h2>Semana 3: Actividad de Presentaciones</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">
-                ¡Practica tus conocimientos sobre presentaciones profesionales con esta actividad interactiva!
-            </p>
+            <h2>Semana 3: Presentaciones de Alto Impacto</h2>
 
-            <div
-                style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
+            <div class="week-tabs">
+                <button class="week-tab" data-tab="juego">🎮 Juego</button>
+                <button class="week-tab active" data-tab="actividades">📋 Actividades</button>
+            </div>
+
+            <!-- Juego Tab Content -->
+            <div class="tab-content" id="tab-juego">
+            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                ¡Practica tus conocimientos con esta actividad interactiva!
+            </p>
+            <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
                 <iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen="true"
                     webkitallowfullscreen="true" mozallowfullscreen="true" width="100%" height="690" frameborder="0"
                     src="https://es.educaplay.com/juego/27817756-presentaciones_de_alto_impacto.html"
                     style="display: block; min-height: 690px; border-radius: 12px;"></iframe>
+            </div>
+            </div>
+
+            <!-- Actividades Tab Content -->
+            <div class="tab-content active" id="tab-actividades">
+                <div class="sessions-grid" id="sessions-list">
+            <button class="session-btn" data-session="sesion-12">
+                <span class="session-icon">📄</span>
+                Sesión 12
+            </button>
+            <button class="session-btn" data-session="sesion-14">
+                <span class="session-icon">📄</span>
+                Sesión 14
+            </button>
+                </div>
+            <div class="session-content" id="sesion-12">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 12</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
+            <div class="session-content" id="sesion-14">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 14</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
             </div>
         </main>
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Cálculo Electrónica - Semana 3 - ICO MOS</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="subject-header">
+            <span class="subject-icon">📈</span>
+            <h1>Hoja de Cálculo Electrónica</h1>
+            <p class="subject-description">Semana 3</p>
+        </header>
+
+        <main class="week-content">
+            <h2>Semana 3: Hoja de Cálculo Electrónica</h2>
+
+            <div class="week-tabs">
+                <button class="week-tab" data-tab="juego">🎮 Juego</button>
+                <button class="week-tab active" data-tab="actividades">📋 Actividades</button>
+            </div>
+
+            <!-- Juego Tab Content -->
+            <div class="tab-content" id="tab-juego">
+            <div class="placeholder-message" style="text-align: center; padding: 3rem;">
+                <span class="icon">🎮</span>
+                <p>Próximamente: Juego interactivo</p>
+            </div>
+            </div>
+
+            <!-- Actividades Tab Content -->
+            <div class="tab-content active" id="tab-actividades">
+                <div class="sessions-grid" id="sessions-list">
+            <button class="session-btn" data-session="sesion-12">
+                <span class="session-icon">📄</span>
+                Sesión 12
+            </button>
+            <button class="session-btn" data-session="sesion-14">
+                <span class="session-icon">📄</span>
+                Sesión 14
+            </button>
+                </div>
+            <div class="session-content" id="sesion-12">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 12</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
+            <div class="session-content" id="sesion-14">
+                <button class="back-to-sessions">← Volver a Sesiones</button>
+                <h3>Sesión 14</h3>
+                <div class="session-images">
+                    <p class="placeholder-message">
+                        <span class="icon">📚</span>
+                        Próximamente: Instrucciones en imágenes
+                    </p>
+                </div>
+            </div>
+            </div>
+        </main>
+
+        <div class="nav-buttons">
+            <a href="../mos-subjects/hoja-calculo.html" class="btn btn-secondary">← Volver a la Materia</a>
+            <a href="../mos-portal.html" class="btn btn-primary">🏠 Portal MOS</a>
+        </div>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Instituto de Compuingles de Oriente - MOS Program</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
