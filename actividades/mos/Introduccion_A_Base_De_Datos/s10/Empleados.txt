@@ -1,0 +1,21 @@
+"Nombre","Apellido_Paterno","Apellido_Materno","Telefono","Correo_Electronico","Direccion","Sueldo"
+"Juan","López","García","555-123-4567","juan.lopez@example.com","Av. Revolución 123, Col. Centro, Ciudad de México",25000
+"María","Hernández","Gómez","555-234-5678","maria.hernandez@example.com","Calle 4A #56, Col. Roma, Ciudad de México",28000
+"Carlos","Martínez","Ramírez","555-345-6789","carlos.martinez@example.com","Av. Insurgentes Sur 890, Col. Del Valle, Ciudad de México",30000
+"Ana","González","Pérez","555-456-7890","ana.gonzalez@example.com","Calle 7 #12, Col. Condesa, Ciudad de México",26000
+"Javier","Díaz","Jiménez","555-567-8901","javier.diaz@example.com","Av. Universidad 456, Col. Narvarte, Ciudad de México",27000
+"Laura","Ruiz","Torres","555-678-9012","laura.ruiz@example.com","Calle 10 #34, Col. Polanco, Ciudad de México",29000
+"Pedro","Sánchez","López","555-789-0123","pedro.sanchez@example.com","Av. Reforma 789, Col. Juárez, Ciudad de México",31000
+"Alejandra","Rojas","Gutiérrez","555-890-1234","alejandra.rojas@example.com","Calle 13 #56, Col. Anzures, Ciudad de México",32000
+"Sergio","Torres","Castillo","555-901-2345","sergio.torres@example.com","Av. Hidalgo 901, Col. Cuauhtémoc, Ciudad de México",27000
+"Elena","Vargas","Vázquez","555-012-3456","elena.vargas@example.com","Calle 16 #78, Col. Doctores, Ciudad de México",28000
+"Roberto","Flores","García","555-123-4567","roberto.flores@example.com","Av. Cuauhtémoc 234, Col. Roma Sur, Ciudad de México",30000
+"Mónica","Ramírez","Hernández","555-234-5678","monica.ramirez@example.com","Calle 19 #90, Col. Del Carmen, Ciudad de México",29000
+"Daniel","Gómez","Martínez","555-345-6789","daniel.gomez@example.com","Av. 20 de Noviembre 345, Col. Centro Histórico, Ciudad de México",31000
+"Fernanda","Jiménez","López","555-456-7890","fernanda.jimenez@example.com","Calle 22 #34, Col. San Ángel, Ciudad de México",33000
+"Jorge","Pérez","Gómez","555-567-8901","jorge.perez@example.com","Av. Revolución 456, Col. San Rafael, Ciudad de México",28000
+"Paula","Hernández","Rodríguez","555-678-9012","paula.hernandez@example.com","Calle 25 #67, Col. Narvarte Poniente, Ciudad de México",30000
+"Ricardo","Vázquez","Díaz","555-789-0123","ricardo.vazquez@example.com","Av. Juárez 567, Col. Doctores Sur, Ciudad de México",32000
+"Julia","Castillo","Gutiérrez","555-890-1234","julia.castillo@example.com","Calle 28 #45, Col. Del Valle Sur, Ciudad de México",31000
+"Andrés","Morales","Suárez","555-901-2345","andres.morales@example.com","Av. Tamaulipas 678, Col. Condesa Norte, Ciudad de México",33000
+"Patricia","Ortiz","Torres","555-012-3456","patricia.ortiz@example.com","Calle 31 #89, Col. Roma Norte, Ciudad de México",34000
