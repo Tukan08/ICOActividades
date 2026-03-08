@@ -25,48 +25,60 @@
             <div class="week-tabs">
                 <button class="week-tab" data-tab="juego">🎮 Juego</button>
                 <button class="week-tab active" data-tab="actividades">📋 Actividades</button>
+                <button class="week-tab" data-tab="emulador">📱 Emulador</button>
             </div>
 
             <!-- Juego Tab Content -->
             <div class="tab-content" id="tab-juego">
-            <div class="placeholder-message" style="text-align: center; padding: 3rem;">
-                <span class="icon">🎮</span>
-                <p>Próximamente: Juego interactivo</p>
-            </div>
+                <div class="placeholder-message" style="text-align: center; padding: 3rem;">
+                    <span class="icon">🎮</span>
+                    <p>Próximamente: Juego interactivo</p>
+                </div>
             </div>
 
             <!-- Actividades Tab Content -->
             <div class="tab-content active" id="tab-actividades">
                 <div class="sessions-grid" id="sessions-list">
-            <button class="session-btn" data-session="sesion-16">
-                <span class="session-icon">📄</span>
-                Sesión 16
-            </button>
-            <button class="session-btn" data-session="sesion-18">
-                <span class="session-icon">📄</span>
-                Sesión 18
-            </button>
+                    <button class="session-btn" data-session="sesion-16">
+                        <span class="session-icon">📄</span>
+                        Sesión 16
+                    </button>
+                    <button class="session-btn" data-session="sesion-18">
+                        <span class="session-icon">📄</span>
+                        Sesión 18
+                    </button>
                 </div>
-            <div class="session-content" id="sesion-16">
-                <button class="back-to-sessions">← Volver a Sesiones</button>
-                <h3>Sesión 16</h3>
-                <div class="session-images">
-                    <p class="placeholder-message">
-                        <span class="icon">📚</span>
-                        Próximamente: Instrucciones en imágenes
-                    </p>
+                <div class="session-content" id="sesion-16">
+                    <button class="back-to-sessions">← Volver a Sesiones</button>
+                    <h3>Sesión 16</h3>
+                    <div class="session-images">
+                        <p class="placeholder-message">
+                            <span class="icon">📚</span>
+                            Próximamente: Instrucciones en imágenes
+                        </p>
+                    </div>
+                </div>
+                <div class="session-content" id="sesion-18">
+                    <button class="back-to-sessions">← Volver a Sesiones</button>
+                    <h3>Sesión 18</h3>
+                    <div class="session-images">
+                        <p class="placeholder-message">
+                            <span class="icon">📚</span>
+                            Próximamente: Instrucciones en imágenes
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="session-content" id="sesion-18">
-                <button class="back-to-sessions">← Volver a Sesiones</button>
-                <h3>Sesión 18</h3>
-                <div class="session-images">
-                    <p class="placeholder-message">
-                        <span class="icon">📚</span>
-                        Próximamente: Instrucciones en imágenes
-                    </p>
+
+            <!-- Emulador Tab Content -->
+            <div class="tab-content" id="tab-emulador">
+                <p style="text-align: center; margin-bottom: 1rem; font-size: 1.1rem;">
+                    📱 ¡Explora un teléfono Android virtual!
+                </p>
+                <div class="emulator-container">
+                    <iframe src="../androidonlineemulator-master/index.html" width="100%" height="700" frameborder="0"
+                        allow="fullscreen" allowfullscreen="true" style="display: block; border-radius: 12px;"></iframe>
                 </div>
-            </div>
             </div>
         </main>
 

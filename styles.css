@@ -703,6 +703,37 @@ h6 {
     transform: translateX(-4px);
 }
 
+/* Emulator Container */
+.emulator-container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 3px solid var(--medium-gray);
+    position: relative;
+}
+
+.emulator-container::before {
+    content: '📱 Android Emulator';
+    display: block;
+    background: linear-gradient(135deg, #3ddc84 0%, #00796b 100%);
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.emulator-container iframe {
+    width: 100%;
+    min-height: 700px;
+    border: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-text h1 {
